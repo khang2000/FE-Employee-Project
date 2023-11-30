@@ -48,7 +48,6 @@ const Login = () => {
   };
   return (
     <div className="container mt-3">
-      <h3>hello2</h3>
       <section className="d-flex justify-content-between">
         <div className="left-data mt-3" style={{ width: "100%" }}>
           <h3 className="text-center col-lg-6">Đăng nhập</h3>
