@@ -85,7 +85,7 @@ const Home = () => {
       .then((data) => {
         //xu ly logic neu can
         console.log(data);
-        if (data.message !== "Đăng ký thành công") {
+        if (data.message !== "Đăng ký thành công!") {
           alert(data.message);
         } else {
           console.log(data);
