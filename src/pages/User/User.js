@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
 import Header from "../../components/header/header";
 import user_avatar from "../images/user_avatar.png";
-import avatar_1 from "../images/avatar_1.png";
 import { useParams } from "react-router-dom";
 import axios from "axios";
 const User = () => {

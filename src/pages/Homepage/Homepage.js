@@ -4,7 +4,7 @@ import Main from "../../components/main/main";
 import HeaderTable from "./HeaderTable";
 import Header from "../../components/header/header";
 import { useNavigate } from "react-router-dom";
-import EditUser from "../../components/EditUser/EditUser";
+import UserModal from "../../components/UserModal/UserModal";
 
 const Homepage = () => {
   const token = localStorage.getItem("token");
@@ -71,7 +71,9 @@ const Homepage = () => {
       });
     setOpenModal(!isOpenModal);
   };
-
+  const closeModal = (_id) => {
+    setOpenModal(!isOpenModal);
+  };
   // PAGINATION
   const [currentPage, setCurrentPage] = useState(1);
   const [recordsPerPage, setRecordsPerPage] = useState("3");
@@ -168,14 +170,15 @@ const Homepage = () => {
               </li>
             </ul>
           </nav>
-          {/* {isOpenModal && (
+          {isOpenModal && (
             <div className="center-screen">
-              <EditUser
+              <UserModal
                 handleOpenModal={handleOpenModal}
                 userModal={userModal}
+                closeModal={closeModal}
               />
             </div>
-          )} */}
+          )}
         </div>
       </div>
     </>

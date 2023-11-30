@@ -60,6 +60,23 @@ div .confirmPassword {
   justify-content: center;
   width: 100%;
 }
+.infor-user-modal {
+  padding: 50px;
+  display: flex;
+  column-gap: 20px;
+  justify-content: center;
+  width: 100%;
+}
+.user-modal-avatar {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.infor-user-modal img {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+}
 .infor-user img {
   width: 20%;
   /* border: 1px solid black; */

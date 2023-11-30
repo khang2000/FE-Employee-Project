@@ -43,9 +43,14 @@ const Main = (props) => {
         <td>{user.email}</td>
 
         <td>
-          <Link to={`/user/${user._id}`}>
+          {/* <Link to={`/user/${user._id}`}>
             <FaEye />
-          </Link>
+          </Link> */}
+          <FaEye
+            onClick={() => {
+              handleOpenModal(user._id);
+            }}
+          />
         </td>
         <td>
           <Link to={`/update_user/${user._id}`}>
