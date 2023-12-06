@@ -17,7 +17,7 @@ const UserModal = (props) => {
           <img
             src={
               userModal
-                ? `http://localhost:8000/${userModal.image}`
+                ? `https://employee-wed.onrender.com/${userModal.image}`
                 : user_avatar
             }
           ></img>

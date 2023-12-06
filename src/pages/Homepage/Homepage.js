@@ -17,7 +17,7 @@ const Homepage = () => {
       navigate("/login");
     }
 
-    fetch("http://localhost:8000/api/user", {
+    fetch("https://employee-wed.onrender.com/api/user", {
       method: "GET",
       headers: {
         Authorization: `Bearer ${token}`,

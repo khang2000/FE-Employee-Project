@@ -44,7 +44,7 @@ const UpdateUser = () => {
   //   }
   // };
   useEffect(() => {
-    fetch(`http://localhost:8000/api/user/${id}`, {
+    fetch(`https://employee-wed.onrender.com/api/user/${id}`, {
       method: "GET",
       headers: {
         "Content-Type": "application/json",
@@ -83,7 +83,7 @@ const UpdateUser = () => {
   const Update = (e) => {
     e.preventDefault();
 
-    fetch(`http://localhost:8000/api/user/${id}`, {
+    fetch(`https://employee-wed.onrender.com/api/user/${id}`, {
       method: "PUT",
       headers: {
         Authorization: `Bearer ${token}`,

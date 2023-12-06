@@ -15,7 +15,7 @@ const User = () => {
 
   useEffect(() => {
     axios
-      .get("http://localhost:8000/api/user/" + id)
+      .get("https://employee-wed.onrender.com/api/user/" + id)
       .then((result) => {
         console.log(result);
         setUserName(result.data.data.userName);
@@ -32,8 +32,12 @@ const User = () => {
     <div>
       <Header />
       <div className="infor-user">
-        <img src={image ? `http://localhost:8000/${image}` : user_avatar}></img>
-        {console.log(`http://localhost:8000/${image}`)}
+        <img
+          src={
+            image ? `https://employee-wed.onrender.com/${image}` : user_avatar
+          }
+        ></img>
+        {console.log(`https://employee-wed.onrender.com/${image}`)}
         <div className="infor-user-text">
           <h2>{userName ? userName : "Nhập thông tin"}</h2>
 
