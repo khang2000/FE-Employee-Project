@@ -13,11 +13,55 @@
 .App {
   padding: 10px;
 }
+.Homepage {
+  padding: 10px;
+}
+/* .link-profile {
+  text-decoration: none;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #212529;
+  text-align: left;
+} */
+.link-profile {
+  display: block;
+  /* padding: 0.5rem 1rem; */
+  color: #212529;
+  text-decoration: none;
+  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out,
+    border-color 0.15s ease-in-out;
+  padding: 10px;
+}
+
+.btn-user button {
+  /* display: inline-block; */
+  font-weight: 400;
+  line-height: 1.5;
+  color: #212529;
+  text-align: left;
+  background-color: transparent;
+  border: 1px solid transparent;
+  width: 100%;
+  padding: 10px;
+}
+.btn-user:hover {
+  background-color: rgb(234, 232, 232);
+  transition: 0.2s;
+}
+#navbarNavDarkDropdown img {
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+}
 .nav {
   display: flex;
   justify-content: space-between;
   margin-top: 40px;
   margin-bottom: 30px;
+}
+nav .nav-header {
+  display: flex;
+  justify-content: space-between;
 }
 label {
   margin-right: 10px;
@@ -60,12 +104,20 @@ div .confirmPassword {
   justify-content: center;
   width: 100%;
 }
+form .userModal {
+  width: 20%;
+  /* height: 30vh; */
+  opacity: 100;
+}
 .infor-user-modal {
-  padding: 50px;
+  padding: 10px;
   display: flex;
   column-gap: 20px;
   justify-content: center;
   width: 100%;
+}
+.infor-user-modal p {
+  font-size: 12px;
 }
 .user-modal-avatar {
   display: flex;
@@ -84,6 +136,7 @@ div .confirmPassword {
   background-size: 100%;
   background-repeat: no-repeat; */
 }
+
 .table-body {
   width: 100%;
 }

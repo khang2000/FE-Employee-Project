@@ -54,7 +54,7 @@ const Homepage = () => {
 
   const [isOpenModal, setOpenModal] = useState(false);
   const handleOpenModal = (_id) => {
-    fetch(`http://localhost:8000/api/user/${_id}`, {
+    fetch(`https://employee-wed.onrender.com/api/user/${_id}`, {
       method: "GET",
       headers: {
         "Content-Type": "application/json",
@@ -95,93 +95,90 @@ const Homepage = () => {
     setRecordsPerPage(e.target.value);
   }
   return (
-    <>
-      <div>
-        <Header />
-
-        <div className="user">
-          <div className="nav">
-            <form>
-              <label for="user">Hiển thị</label>
-              <select onChange={handleSelect}>
-                {option.map((option) => (
-                  <option value={option.value}>{option.label}</option>
-                ))}
-              </select>
-            </form>
-
-            <form>
-              <input
-                onChange={(e) => setSearch(e.target.value)}
-                placeholder="Tìm kiếm"
-              ></input>
-            </form>
-          </div>
-
-          <table
-            className={
-              isOpenModal
-                ? "table table-striped class-example"
-                : "table table-striped"
-            }
-          >
-            <HeaderTable />
-            {records
-              .filter((user) => {
-                return search.toLowerCase() === ""
-                  ? user
-                  : user.userName.toLowerCase().includes(search);
-              })
-              .map((user, index) => {
-                return (
-                  <Main
-                    user={user}
-                    index={index}
-                    handleOpenModal={handleOpenModal}
-                  />
-                );
-              })}
-          </table>
-          <nav>
-            <ul className="pagination">
-              <li className="page-item">
-                <a href="#" className="page-link" onClick={prePage}>
-                  Prev
-                </a>
-              </li>
-              {numbers.map((n, i) => (
-                <li
-                  className={`page-item ${currentPage === n ? "active" : ""}`}
-                  key={i}
-                >
-                  <a
-                    href="#"
-                    className="page-link"
-                    onClick={() => changeCPage(n)}
-                  >
-                    {n}
-                  </a>
-                </li>
+    <div className="Homepage">
+      <Header />
+      <div className="user">
+        <div className="nav">
+          <form>
+            <label for="user">Hiển thị</label>
+            <select onChange={handleSelect}>
+              {option.map((option) => (
+                <option value={option.value}>{option.label}</option>
               ))}
-              <li className="page-item">
-                <a href="#" className="page-link" onClick={nextPage}>
-                  Next
+            </select>
+          </form>
+
+          <form>
+            <input
+              onChange={(e) => setSearch(e.target.value)}
+              placeholder="Tìm kiếm"
+            ></input>
+          </form>
+        </div>
+
+        <table
+          className={
+            isOpenModal
+              ? "table table-striped class-example"
+              : "table table-striped"
+          }
+        >
+          <HeaderTable />
+          {records
+            .filter((user) => {
+              return search.toLowerCase() === ""
+                ? user
+                : user.userName.toLowerCase().includes(search);
+            })
+            .map((user, index) => {
+              return (
+                <Main
+                  user={user}
+                  index={index}
+                  handleOpenModal={handleOpenModal}
+                />
+              );
+            })}
+        </table>
+        <nav>
+          <ul className="pagination">
+            <li className="page-item">
+              <a href="#" className="page-link" onClick={prePage}>
+                Prev
+              </a>
+            </li>
+            {numbers.map((n, i) => (
+              <li
+                className={`page-item ${currentPage === n ? "active" : ""}`}
+                key={i}
+              >
+                <a
+                  href="#"
+                  className="page-link"
+                  onClick={() => changeCPage(n)}
+                >
+                  {n}
                 </a>
               </li>
-            </ul>
-          </nav>
-          {isOpenModal && (
-            <div className="center-screen">
-              <UserModal
-                handleOpenModal={handleOpenModal}
-                userModal={userModal}
-                closeModal={closeModal}
-              />
-            </div>
-          )}
-        </div>
+            ))}
+            <li className="page-item">
+              <a href="#" className="page-link" onClick={nextPage}>
+                Next
+              </a>
+            </li>
+          </ul>
+        </nav>
+        {isOpenModal && (
+          <div className="center-screen">
+            <UserModal
+              handleOpenModal={handleOpenModal}
+              userModal={userModal}
+              closeModal={closeModal}
+            />
+          </div>
+        )}
       </div>
-    </>
+    </div>
   );
   function prePage() {
     if (currentPage !== 1) {

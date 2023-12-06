@@ -18,7 +18,7 @@ const Login = () => {
   };
   const addData = (e) => {
     e.preventDefault();
-    fetch("http://localhost:8000/api/auth/signin", {
+    fetch("https://employee-wed.onrender.com/api/auth/signin", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -35,6 +35,9 @@ const Login = () => {
           localStorage.setItem("user", JSON.stringify(data.user));
           localStorage.setItem("role", data.user.role);
           localStorage.setItem("token", data.accessToken);
+          localStorage.setItem("image", data.user.image);
+          localStorage.setItem("id", data.user._id);
+
           navigate("/");
         }
         // if (data.user) {

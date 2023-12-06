@@ -1,16 +1,17 @@
 import React from "react";
 import user_avatar from "../images/user_avatar.png";
-import {} from "react-icons/fa";
+import { FaTimes } from "react-icons/fa";
 
 const UserModal = (props) => {
   const { userModal } = props;
   return (
-    <form>
-      <button
+    <form className="userModal">
+      <FaTimes
+        className="close-userModal"
         onClick={() => {
           props.closeModal();
         }}
-      ></button>
+      />
       <div className="infor-user-modal">
         <div className="user-modal-avatar">
           <img
@@ -20,24 +21,24 @@ const UserModal = (props) => {
                 : user_avatar
             }
           ></img>
-          <h4>{userModal ? userModal.userName : "chưa có thông tin"}</h4>
+          <h5>{userModal ? userModal.userName : "chưa có thông tin"}</h5>
         </div>
         <div className="infor-user-text">
-          <h5>
+          <h6>
             Số CCCD/CMND:
             {userModal ? userModal.id_number : "chưa có thông tin"}
-          </h5>
+          </h6>
 
-          <h5>
+          <h6>
             Ngày sinh: {userModal ? userModal.birthday : "chưa có thông tin"}
-          </h5>
+          </h6>
 
-          <h5>
+          <h6>
             Địa chỉ: {userModal ? userModal.addressBorn : "chưa có thông tin"}
-          </h5>
-          <h5>
+          </h6>
+          <h6>
             Chức vụ: {userModal ? userModal.position : "chưa có thông tin"}
-          </h5>
+          </h6>
           <p>
             I love playing badminton in my spare time. I spend a lot of my free
             time playing badminton after finishing my homework. I was so

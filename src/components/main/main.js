@@ -1,6 +1,7 @@
 import { FaEye } from "react-icons/fa";
 import { FaPencilAlt } from "react-icons/fa";
 import { FaTrashAlt } from "react-icons/fa";
+
 import { Link } from "react-router-dom";
 
 const Main = (props) => {
@@ -53,7 +54,7 @@ const Main = (props) => {
           />
         </td>
         <td>
-          <Link to={`/update_user/${user._id}`}>
+          <Link className="link-dark" to={`/update_user/${user._id}`}>
             <FaPencilAlt />
           </Link>
           {/* <FaPencilAlt
