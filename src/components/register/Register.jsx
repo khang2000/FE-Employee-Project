@@ -71,7 +71,7 @@ const Home = () => {
     formData.append("email", email);
     formData.append("password", password);
     formData.append("confirmPassword", confirmPassword);
-    fetch("http://localhost:8000/api/auth/signup", {
+    fetch("https://employee-wed.onrender.com/api/auth/signup", {
       method: "POST",
       // headers: {
       //   "Content-Type": "application/json",

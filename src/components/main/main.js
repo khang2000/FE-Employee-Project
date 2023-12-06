@@ -11,7 +11,7 @@ const Main = (props) => {
     if (user.role === "admin") {
       alert("Bạn là admin nên không thể tự xóa");
     } else {
-      fetch(`http://localhost:8000/api/user/${id}`, {
+      fetch(`https://employee-wed.onrender.com/api/user/${id}`, {
         method: "DELETE",
         headers: {
           // Authorization: `Bearer ${token}`,
